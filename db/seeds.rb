@@ -6,10 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Destination.destroy_all
+Blogger.destroy_all
+Post.destroy_all
 
 30.times do 
   Destination.create({
-    name: Faker::GameOfThrones.city,
+    name: Faker::TvShows::GameOfThrones.city,
     country: Faker::Address.country
   })
 end
@@ -32,3 +35,5 @@ end
     })
   end
 end
+
+puts "Done seeding!"

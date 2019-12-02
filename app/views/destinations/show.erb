@@ -1,0 +1,15 @@
+<h1> <%= @destination.name %></h1>
+
+<h3>Most Liked Post</h3>
+<% if @destination.most_liked_post %>
+    <%= link_to @destination.most_liked_post.title, @destination.most_liked_post %>
+<% end %>
+
+<h3>Average Age: <%= @destination.average_age %> </h3>
+
+<h3>5 Most Recent Posts</h3>
+<ul>
+<% @destination.most_recent_posts.each do |post| %>
+    <li> <%= post.title %> </li>
+<% end %>
+</ul>
